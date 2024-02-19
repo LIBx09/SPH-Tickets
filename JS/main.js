@@ -1,44 +1,34 @@
-function changeWal() {
-    hideElementById('sbh-ticket');
-    showElementById('sbh-paribahan');
-}
 function hideElementById(elementId){
     const element = document.getElementById(elementId);
     element.classList.add('hidden');
 }
-function showElementById(elementId){
-    const element = document.getElementById(elementId);
-    element.classList.remove('hidden');//
-}///////////////////////////
 
-function secondWindow(){
-    hideElementById('sbh-ticket')
-    hideElementById('sbh-paribahan')
-    hideElementById('footer')
-    showElementById('success')
-}
-function hideElementById(elementId) {
-    const element = document.getElementById(elementId);
-    element.classList.add('hidden')
-}
-function hideElementById(elementId) {
-    const element = document.getElementById(elementId);
-    element.classList.add('hidden')
-}
-function hideElementById(elementId) {
-    const element = document.getElementById(elementId);
-    element.classList.add('hidden')
-}
 function showElementById(elementId){
     const element = document.getElementById(elementId);
     element.classList.remove('hidden');
 }
 
 
+function changeWal() {
+    hideElementById('sbh-ticket');
+    showElementById('sbh-paribahan');
+}
+function secondWal (){
+    hideElementById('header')
+    hideElementById('sbh-ticket')
+    hideElementById('best-offers')
+    hideElementById('sbh-paribahan')
+    hideElementById('footer')
+    showElementById('success')
+}
 
-
-
-
+function ThirdWall(){
+    showElementById('header')
+    showElementById('sbh-ticket')
+    showElementById('best-offers')
+    showElementById('footer')
+    hideElementById('success')
+}
 
 const seatSelects = document.querySelectorAll(".seatSelector p");
 const seatLeft = document.getElementById('seats-left');
@@ -60,35 +50,36 @@ for (let index = 0; index < seatSelects.length; index++) {
         seatSelect.style.color = seatSelect.style.color === 'white' ? '' : 'white';
         
         if (!seatSelect.classList.contains('selected')) {
+            console.log(seatSelect.classList.contains('selected'));
             seatSelect.classList.add('selected'); 
             ticketsPurchased++; 
             seatCount -= 1; 
             seatLeft.innerText = seatCount.toString(); 
-            
             const p = document.createElement("p");
             const c = document.createElement("c");
             const p2 = document.createElement("p2");
             p.innerText = seatSelect.innerText;
             c.innerText = "Economy";
             p2.innerText = ticketPrice.toString(); 
-            displayContainer.appendChild(p);
-            displayContainer.appendChild(c);
-            displayContainer.appendChild(p2);
-
+            const d = document.createElement("div");
+            d.classList.add('flex', 'justify-between', 'mx-5' );
+            d.appendChild(p);
+            d.appendChild(c);
+            d.appendChild(p2);
+            displayContainer.appendChild(d);
 
             totalTicketPrice += ticketPrice;
             document.getElementById("total-price").innerText = totalTicketPrice;
 
         } else {
+
             seatSelect.classList.remove('selected'); 
             ticketsPurchased -= 1; 
-            seatCount += 1;
+            seatCount -= 1;
             seatLeft.innerText = seatCount.toString();
-
             totalTicketPrice -= ticketPrice;
             document.getElementById("total-price").innerText = totalTicketPrice;
         }
-
 
     });
 }
