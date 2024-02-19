@@ -39,7 +39,7 @@
         </div>
     </header>
     <main class="mx-4 lg:mx-24 pt-10">
-        <section id="sbh-ticket" class="bg-center bg-cover bg-[url('/images/banner.png')] bg-no-repeat h-[75%] rounded-3xl relative">
+        <section id="sbh-ticket" class="bg-center bg-cover bg-[url('./images/banner.png')] bg-no-repeat h-[75%] rounded-3xl relative">
             <div class="py-10 lg:py-20 flex flex-col justify-center items-center text-center gap-10">
                 <h2 class="text-5xl font-extrabold text-white raleway">End-to-End Travel with SPH Paribahan <br>
                     <span class="text-[#1DD100]">SPH Paribahan</span>
@@ -256,27 +256,32 @@
                     <div class="border-b-2 border-dashed "></div>
                     <div class="bg-[#F7F8F8] rounded-xl mt-5">
                         <div class="flex justify-between mx-5 py-2 border-b-2 border-dashed ">
-                            <p>Seat <span id="seat-plus" class="bg-[#1DD100] px-2 rounded-lg inter">0</span></p>
-                            <p>Class</p>
-                            <p>Price</p>
+                            <p>Seat Name</p>
+                            <p>Seat<span id="seat-plus" class="bg-[#1DD100] px-2 rounded-lg inter">0</span></p>
                         </div>
-                        <div id="display-amount"><p></p></div>
+
+                        <div class="">
+                            <div id="display-container" class="ml-5 flex flex-col justify-between">
+
+                            </div>
+                        </div>
+
                         <div class="border-b-2 border-dashed"></div>
                         <div class="flex justify-between mx-5 py-5">
                             <p>Total Price</p>
-                            <p>BDT <span class="inter">0</span></p>
+                            <p>BDT <span class="inter" id="total-price">0</span></p>
                         </div>
                         
                         <div class="flex justify-center items-center">
                             <div class="join">
-                                <input class="input input-bordered join-item" placeholder="Have a Coupon"/>
-                                <button class="btn join-item rounded-r-full bg-[#1DD100]">Apply</button>
+                                <input id="input-field" class="input input-bordered join-item" placeholder="Have a Coupon"/>
+                                <button id="apply-btn" class="btn join-item rounded-r-full bg-[#1DD100]">Apply</button>
                             </div>
                         </div>
                         
                         <div class="flex justify-between mx-5 py-5">
                             <p>Grand Total</p>
-                            <p>BDT <span class="inter">0</span></p>
+                            <p>BDT <span id="grand-total" class="inter">0</span></p>
                         </div>
                         <div class="mx-5">
                             <h2>Passenger Name*</h2>
